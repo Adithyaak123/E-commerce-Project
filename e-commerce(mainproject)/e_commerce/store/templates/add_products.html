@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        
+
+
+
+       
+    </style>
+</head>
+
+<body>
+    <h1 class="text-center pt-5"><a href="adminhome" class="text-decoration-none">Home</a>/Add Products</h1>
+    <div class="container w-50">
+
+        <section class="panel panel-default">
+            
+            <div class="panel-body ">
+
+                <form action="/add_products" class="form-horizontal " role="form" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4  control-label ">Name</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="name" id="name"
+                                placeholder="Enter product Name">
+                        </div>
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">Price</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control" name="price" id="name" placeholder="Price"
+                                style="font-size: 15px;">
+                        </div>
+                    </div> <!-- form-group // -->
+
+                 
+                    <div class="form-group">
+                        <label for="name" class="col-sm-4 control-label">Image</label>
+                        <div class="col-sm-5">
+                            <input type="file" name="file_img">
+                        </div>
+                
+                    </div> <!-- form-group // -->
+                    <div class="form-group">
+                        <label for="tech" class="col-sm-4 control-label">Category</label>
+                        <div class="col-sm-5">
+                            <select class="form-control" name="category_id">
+                                <option value="">Please choose category</option>
+                                {% for category in categories %}
+                                <option value="{{category.id}}">{{category.name}}</option>
+                                {% endfor %}
+                               
+                            </select>
+                        </div>
+                    </div> <!-- form-group // -->
+                    <hr>
+                    <div class="form-group">
+                        <div class="col-sm-offset-4 col-sm-12 ">
+                            <button type="submit" class="btn btn-primary w-25">ADD</button>
+                        </div>
+                    </div> <!-- form-group // -->
+                </form>
+
+            </div><!-- panel-body // -->
+        </section><!-- panel// -->
+
+
+    </div> <!-- container// -->
+    </div>
+
+   
+</body>
+
+</html>

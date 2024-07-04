@@ -1,0 +1,700 @@
+{% load custom_filter %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>E Store - eCommerce HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="eCommerce HTML Template Free Download" name="keywords">
+    <meta content="eCommerce HTML Template Free Download" name="description">
+    <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Source+Code+Pro:700,900&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick-theme.css' %}" rel="stylesheet">
+    <link href="{% static 'fonts/fontawesome/css/all.min.css' %}" type="text/css" rel="stylesheet">
+
+
+    <!-- Template Stylesheet -->
+    <!-- <link href="{% static 'css/footer.css' %}" rel="stylesheet"> -->
+    <!-- <link href="{% static 'css/wishlist.css' %}" rel="stylesheet"> -->
+
+    <link href="{% static 'css/ui.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+    <!-- custom javascript -->
+    <!-- <script src="{% static 'js/script.js' %}" type="text/javascript"></script> -->
+    <style>
+        /* .cart-page .table .qty {
+    display: inline-block;
+    width: 100px;
+    font-size: 0;
+} */
+        .cart-page {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .cart-page .cart-page-inner {
+            padding: 30px;
+            margin-bottom: 30px;
+            background: #ffffff;
+        }
+
+        .cart-page .table {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        .cart-page .table .thead-dark th {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            color: #353535;
+            text-align: center;
+            background: transparent;
+            border-color: #dddddd;
+            border-bottom: none;
+            vertical-align: middle;
+        }
+
+        .cart-page .table td {
+            font-size: 16px;
+            vertical-align: middle;
+        }
+
+        .cart-page .table .img {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-page .table .img img {
+            max-width: 100px;
+            max-height: 100px;
+            margin-right: 15px;
+        }
+
+        dl[class=row] {
+            margin-bottom: 0;
+        }
+
+        [class*=dlist-] {
+            margin-bottom: 5px;
+        }
+
+        [class*=dlist-] dd {
+            margin-bottom: 0;
+        }
+
+        .dlist-inline dt,
+        .dlist-inline dd {
+            display: inline-block;
+        }
+
+        .link a {
+            color: black;
+        }
+
+        .link a:hover {
+            border-bottom: 3px solid white;
+        }
+
+        .dlist-align {
+            display: flex;
+        }
+
+        .dlist-align dt {
+            width: 150px;
+            word-wrap: break-word;
+            font-weight: normal;
+        }
+
+        .input:focus {
+            /* border-color: white; */
+        }
+
+        .dlist-align dd {
+            flex-grow: 1;
+        }
+
+        .btn-light {
+            background-color: #fff;
+            border-color: #e4e4e4;
+        }
+
+        .btn-light:hover {
+            background-color: #fff;
+            border-color: #989898;
+        }
+
+        .search:hover {
+            background-color: green;
+            color: white;
+            border: none;
+
+        }
+
+        .cart {
+            font-weight: bold;
+            font-size: 20px;
+            color: green;
+        }
+
+        .cart:hover {
+            background-color: green;
+            color: white;
+
+        }
+
+        .search {
+            color: green;
+            border: 2px solid green;
+            background-color: #989898;
+        }
+    </style>
+</head>
+
+<body style="background-color: aliceblue;">
+    <!-- <header style="position: fixed;width: 100%;"> -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top w-100 " style="background-color: gray;width: 100%;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center " id="navbarTogglerDemo01" style="font-weight: bold;">
+            <a class="navbar-brand ms-4" href="#"><img src="{% static 'img/trolley.png' %}" alt="" style="width: 45px;"
+                    class="">Ecommerce</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link ms-5 text-light " href="/index">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link ms-5  widget-header text-light" href="cart">Cart
+                        <span class="badge bg-danger ">{{count}}</span>
+
+                    </a>
+                </li>
+
+                <li class="nav-item  ">
+                    <a href="orders" class="nav-link  ms-5 text-light">orders</a>
+
+
+                </li>
+                <li class="nav-item active ">
+                    <a href="login" class="nav-link text-light ms-5">Logout</a>
+                </li>
+
+
+                <li class="nav-item  ">
+                    <a href="signup" class="nav-link text-light ms-5">Signup</a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="login" class="nav-link text-light ms-5">Login</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link text-light ms-5" href="view_wishlist"><i class="fa fa-heart   "></i>
+                        <span class="badge bg-danger">{{wish_count}}</span>
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-light dropdown-toggle ms-5 " href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        {% for category in categorys %}
+
+                        <li><a class="dropdown-item category"
+                                href="{% url 'products_by_category' category.id %}">{{category.name}}</a></li>
+
+                        {% endfor %}
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="account" class="nav-link text-warning  text-capitalize  ms-4 one"
+                        style="font-weight: bold;"><img src="{% static 'img/1077063.png' %}" alt=""
+                            width="25px">{{customer.Firstname}}</a>
+
+
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div> -->
+    </nav>
+
+   
+
+
+
+
+
+
+    <!-- Cart Start -->
+    <div class="cart-page text-center " style="margin-top: 90px;width: 90%;margin-left:10%;height:1000px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="cart-page-inner " style="background-color: white;">
+                        <div class="table-responsive ">
+                            <table class="table table-borderless   ">
+                                <thead class=" text-center ">
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Product</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>Total</th>
+                                        <th>Remove</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-center  align-middle  ">
+                                    {% for items in cart_items %}
+
+                                    <tr>
+                                        <td class="img">
+                                            <img src="{{items.product.image.url}}" alt="Image"
+                                                class="rounded-circle ms-5" style="height: 80px;">
+
+
+
+                                        </td>
+                                        <td>{{items.product.Name}}</td>
+                                        <td><span>&#8377; </span>{{items.product.Price}}</td>
+                                        <td>
+
+                                            <div class="qty">
+                                                <!-- <button class="btn-minus bg-primary "><i class="fa fa-minus"></i></button> -->
+                                                <input type="text" class="bg-light text-dark border-0 text-center "
+                                                    name="qtn" value="{{items.quantity}}" style="">
+                                                <!-- <button class="btn-plus bg-primary " onclick="total()"><i class="fa fa-plus"></i></button> -->
+                                            </div>
+
+                                        </td>
+                                        <td><span>&#8377; </span>{{items.quantity|mul:items.product.Price}}</td>
+
+                                        <!-- <td><button><i class="fa fa-trash"></i></button></td> -->
+                                        <td>
+                                            <a href="remove_cart/{{items.id}}"><i class="fa fa-times text-danger   "
+                                                    style="font-size: 30px;"></i></a>
+                                        </td>
+                                        {% endfor %}
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+
+                                    <tr>
+                                        <th colspan="3"></th>
+                                        <th>Total</th>
+                                        <th><span>&#8377; </span>{{total}}</strong></th>
+                                    </tr>
+                                </tfoot>
+
+                            </table>
+                            <hr>
+                            <div class="">
+                                <a href="" data-bs-toggle="modal" data-bs-target="#checkout"
+                                    class="btn btn-outline-success  border  rounded  col-lg-3 float-end  cart">Checkout</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" tabindex="-1" id="checkout" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Check Out Form</h5>
+                                <hr>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="m-2 p-3 ">
+                                    <form action="/checkout" method="POST">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <label for="" class="float-start ">Address</label>
+                                            <input type="text" name="address" class="form-control input"
+                                                aria-describedby="helpId">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="float-start">Phone</label>
+                                            <input type="text" name="Phone" class="form-control input"
+                                                aria-describedby="helpId" maxlength="10">
+
+                                        </div>
+                                        <input type="submit" class=" float-right border rounded  col-lg-6 cart"
+                                            value="Check Out" onclick="order()">
+                                    </form>
+
+
+                                </div>
+
+                                <!-- <p>Modal body text goes here.</p> -->
+                            </div>
+                            <!-- <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    function order() {
+                        alert("Your items are delivered")
+                    }
+                </script>
+                <!-- <div class="modal fade " id="checkout" tabindex="-1" role="dialog" aria-labelledby="checkoutLabel" aria-hidden="true">
+                        <div class="modal-dialog " role="document">
+                            <div class="modal-content ">
+                                <div class="modal-header ">
+                                    <h5 class="modal-title ">Check Out Form
+
+                                    </h5>
+                                    <hr>
+                                    <button  class="btn-close " data-bs-dismiss="modal " >
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                </div>
+                                <div class="modal-body ">
+                                    <div class="m-2 p-3 ">
+                                        <div class="form-group">
+                                            <label for="" >Address</label>
+                                            <input type="text" name="address" class="form-control " aria-describedby="helpId">
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="">Phone</label>
+                                            <input type="text" name="Phone" class="form-control " aria-describedby="helpId">
+
+                                        </div>
+                                        <input type="submit" class="btn float-right btn-outline-success col-lg-6 cart" value="Check Out">
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div> -->
+
+
+                <!-- <div class="col-lg-4">
+                        <div class="cart-page-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="coupon">
+                                        <input type="text" placeholder="Coupon Code">
+                                        <button>Apply Code</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="cart-summary">
+                                        <div class="cart-content">
+                                            <h1>Cart Summary</h1>
+                                            <p>Sub Total<span>$99</span></p>
+                                            <p>Shipping Cost<span>$1</span></p>
+                                            <h2>Grand Total<span>$100</span></h2>
+                                        </div>
+                                        <div class="cart-btn">
+                                            <button>Update Cart</button>
+                                            <button>Checkout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                <!-- <dl class="dlist-align">
+                              <dt>Total price:</dt>
+                              <dd class="text-right "><span>&#8377; </span>{{total}}</dd>
+                              
+                            </dl>
+                            <dl class="dlist-align">
+                              <dt>Tax:</dt>
+                              <dd class="text-right"> <span>&#8377; </span>10.00</dd>
+                            </dl> -->
+                <!-- <dl class="dlist-align">
+                              <dt>Total Price:</dt>
+                              <dd class="text-right text-dark b"><strong><span>&#8377; </span>{{total}}</strong></dd>
+                            </dl>
+                            <hr>
+                            <p class="text-center mb-3 me-3 ">
+                                <img src="{% static 'img/payments.png' %}" height="26" class="w-100">
+                            </p>
+                            <a href="checkout" class="btn bg-primary btn-block text-light border-0 "> Checkout </a>
+                            <a href="./store.html" class="btn btn-light btn-block text-dark ">Continue Shopping</a>
+                        </div> 
+                        </div> 
+                
+                </aside>  -->
+            </div>
+        </div>
+    </div>
+    <!-- Cart End -->
+
+    <!-- Footer Start -->
+    <!-- <div class="footer  " style="background-color: gray;position: fixed;width: 100%;bottom: 0%;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget ms-5">
+                            <h2>Get in Touch</h2>
+                            <div class="contact-info">
+                                <p><i class="fa fa-map-marker-alt"></i>123 E Store, Los Angeles, USA</p>
+                                <p><i class="fa fa-envelope"></i>email@example.com</p>
+                                <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget ms-5">
+                            <h2>Follow Us</h2>
+                            <div class="contact-info">
+                                <div class="social">
+                                    <a href=""><i class="fab fa-twitter"></i></a>
+                                    <a href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a href=""><i class="fab fa-instagram"></i></a>
+                                    <a href=""><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget " style="margin-left: 100px;">
+                            <h2>Quick Links</h2>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="/cart">Shopping Cart</a></li>
+                                <li><a href="/orders">Your Orders</a></li>
+                                <li><a href="/view_wishlist">Wishlist</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget ms-5">
+                            <h2>Quick Links</h2>
+                            <ul>
+                                <li><a href="/account">Account</a></li>
+                                <li><a href="/signup">Sign Up</a></li>
+                                <li><a href="/login">Login</a></li>
+                                <li><a href="/login">Logout</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+             
+            </div>
+        </div> -->
+    <!-- <footer class="footer-59391 " style="background-color: gray;">
+
+        <div class="container">
+
+
+
+            <div class="row mb-5">
+                <div class="col-md-3 ">
+                    <ul class="nav-links list-unstyled nav-left ">
+                        <li><a href="#" class="text-light ">Privacy</a></li>
+                        <li><a href="#" class="text-light ">Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-9  text-md-right">
+                    <ul class="nav-links list-unstyled nav-right">
+                        <li><a href="#" class="text-light ">Home</a></li>
+                        <li><a href="/cart" class="text-light ">Shopping Cart</a></li>
+                        <li><a href="/orders" class="text-light ">Your Orders</a></li>
+                        <li><a href="/view_wishlist" class="text-light ">Wishlist</a></li>
+                        <li><a href="/account" class="text-light ">Account</a></li>
+                        <li><a href="/signup" class="text-light ">Signup</a></li>
+                        <li><a href="/login" class="text-light ">Login</a></li>
+                        <li><a href="/login" class="text-light ">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col ">
+                    <div class="copyright">
+                        <p class="text-light "><small>Copyright 2019. All Rights Reserved.</small></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer> -->
+    <footer class="section-footer border-top fixed-bottom " style="background-color: gray;">
+        <div class="container">
+            <section class="footer-bottom border-top row">
+                <div class="col-md-2">
+                    <p class="text-light ms-0"> &copy 2019 Company name </p>
+                </div>
+                <div class="col-md-8  link  " style="font-weight: bold;margin-left: 190px;">
+                    <a href="#">Home</a>
+                    <a class="ms-4" href="/cart">Shopping Cart</a>
+                    <a class="ms-4" href="/orders">your orders</a>
+                    <a class="ms-4" href="/view_wishlist">wishlist</a>
+                    <a class="ms-4" href="/account">Account</a>
+                    <a class="ms-4" href="/signup">signup</a>
+                    <a class="ms-4" href="/login">Login</a>
+                    <a class="ms-4" href="/login">Logout</a>
+                </div>
+
+
+            </section>
+        </div>
+    </footer>
+
+
+    <!-- <div class="container-fluid  bg-secondary text-dark mt-5 pt-5" style="">
+        <div class="row px-xl-5 pt-5">
+            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
+                <a href="" class="text-decoration-none">
+                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span
+                            class="text-primary font-weight-bold border border-white px-3 mr-1">E</span>Shopper</h1>
+                </a>
+                <p>Dolore erat dolor sit lorem vero amet. Sed sit lorem magna, ipsum no sit erat lorem et magna ipsum
+                    dolore amet erat.</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Street, New York, USA</p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@example.com</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>+012 345 67890</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
+                                Shop</a>
+                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop
+                                Detail</a>
+                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping
+                                Cart</a>
+                            <a class="text-dark mb-2" href="checkout.html"><i
+                                    class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
+                                Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Quick Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Our
+                                Shop</a>
+                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Shop
+                                Detail</a>
+                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Shopping
+                                Cart</a>
+                            <a class="text-dark mb-2" href="checkout.html"><i
+                                    class="fa fa-angle-right mr-2"></i>Checkout</a>
+                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Contact
+                                Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="font-weight-bold text-dark mb-4">Newsletter</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0 py-4" placeholder="Your Name"
+                                    required="required" />
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0 py-4" placeholder="Your Email"
+                                    required="required" />
+                            </div>
+                            <div>
+                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Subscribe
+                                    Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row border-top border-light mx-xl-5 py-4">
+            <div class="col-md-6 px-xl-0">
+                <p class="mb-md-0 text-center text-md-left text-dark">
+                    &copy; <a class="text-dark font-weight-semi-bold" href="#">Your Site Name</a>. All Rights Reserved.
+                    Designed
+                    by
+                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+            <div class="col-md-6 px-xl-0 text-center text-md-right">
+                <img class="img-fluid" src="{% static 'img/payments.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <a href="#" class="back-to-top" style="background-color: black;color: white;"><i class="fa fa-angle-double-up"></i></a> -->
+    <!-- <a href="#" class="btn btn-primary back-to-top bg-dark text-light"><i class="fa fa-angle-double-up"></i></a> -->
+
+
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/easing.min.js' %}"></script>
+    <script src="{% static 'js/slick.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/wishlist.js' %}"></script>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
