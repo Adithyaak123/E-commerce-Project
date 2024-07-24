@@ -1,0 +1,283 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/99dda0d5d9.js' crossorigin='anonymous'></script>
+	<!-- <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}"> -->
+  <link rel="stylesheet" type="text/css" href="{% static 'fonts/iconic/css/material-design-iconic-font.min.css' %}">
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+  <!--===============================================================================================-->	
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}"> -->
+  <!--===============================================================================================-->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}"> -->
+  <!--===============================================================================================-->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min1.css' %}"> -->
+  <!--===============================================================================================-->	
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}"> -->
+  <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/account.css' %}">
+    <!-- <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.min..css' %}" rel="stylesheet"> -->
+
+  <!-- <style>
+    .category:hover{
+        background-color: lightcoral;
+    }
+    .nav-item a{
+      font-size: 18px;
+    }
+    .one{
+    
+      text-decoration-color: lightseagreen;
+      text-shadow: 2px red;
+    }
+    .label{
+      font-weight: bold;
+    }
+    .image:hover {
+			transition: .5s;
+			transform: scale(1.3);
+
+
+		}
+    .three{
+      font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 120px;
+  height: 50px;
+  border-radius: 25px;
+
+ background: white;
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+    }
+    .three::before{
+      content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  opacity: 1;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+    }
+    .three:hover{
+      color: yellow;
+      background: #9152f8;
+  background: -webkit-linear-gradient(bottom, #1995AD, #A1D6E2,#F1F1F2);
+ 
+    }
+    .three:hover:before{
+      opacity: 0;
+    }
+    .account {
+  width: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px 55px;
+
+  background: #9152f8;
+  background: -webkit-linear-gradient(top,  #1995AD, #A1D6E2,#F1F1F2);
+    } -->
+  <!-- /* background: -webkit-linear-gradient(top,  #2F3C7E, #FBEAEB); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #F96167, #F9E795); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #990011, #FCF6F5); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #990011, #FCF6F5); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #8AAAE5, #FFFFFF); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #00246B, #CADCFC); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #CC313D, #F7C5CC); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #1E2761, #408EC6,#7A2048); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #B85042, #E7E8D1,#A7BEAE); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #735DA5, #D3C5E5); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #F98866, #FFF2D7); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #375E97, #FB6542,#FFBB00); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #5031F5, #CB0000,#E4EA8C); */ -->
+  <!-- /* background: -webkit-linear-gradient(top,  #1995AD, #A1D6E2,#F1F1F2); */ -->
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  <!-- /* background: -o-linear-gradient(top,#2F3C7E, #FBEAEB);
+  background: -moz-linear-gradient(top, #2F3C7E,#FBEAEB);
+  background: linear-gradient(top, #2F3C7E, #FBEAEB); */ -->
+
+<!-- /* .title{
+  font-family: Poppins-Medium;
+  font-size: 30px;
+  color: #fff;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
+
+  display: block;
+} */ -->
+    <!-- /* .two*/ -->
+      <!-- /* margin-left: 125px; */ -->
+      <!-- /* width: 100%;
+  position: relative;
+  border-bottom: 2px solid rgba(255,255,255,0.24);
+  margin-bottom: 30px; */ -->
+    
+  <!-- /* </style> */ -->
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-light fixed-top  text-white navbar-expand-lg  " style="background-color: gray;">
+   
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-weight: bold;"><img src="{% static 'img/trolley.png' %}" alt="" style="width: 45px;"class="ms-5 ">E-Commerce</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" style="font-size: 20px;font-weight: bold;">
+              <ul class="navbar-nav  me-auto mb-2 mb-lg-0 ms-3">
+                <li class="nav-item ">
+                  <a href="account" class="nav-link text-warning  text-capitalize  ms-2 one" style="text-decoration: none;"><img src="{% static 'img/1077063.png' %}" alt="" style="" width="35px">&nbsp;{{customer.Firstname}}</a>
+
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link active ms-5 text-light " aria-current="page" href="/index">Home</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link ms-4 text-light widget-header" href="cart">Cart
+                        <span class="badge bg-danger    ">{{count}}</span>
+				
+                    </a>
+                  </li>
+        
+                <!-- {% if user %} -->
+                <!-- <li class="nav-item  ">
+                    <a href="orders" class="nav-link text-light ms-4">orders</a>
+                </li> -->
+                <!-- <li class="nav-item active ">
+                    <a href="login" class="nav-link text-light ms-4">Logout</a>
+                </li> -->
+
+                <!-- {% else %} -->
+                <li class="nav-item  ">
+                    <a href="signup" class="nav-link text-light ms-4">Signup</a>
+                </li>
+                <li class="nav-item  ">
+                    <a href="login" class="nav-link text-light ms-4">Login</a>
+                </li>
+                <!-- {% endif %} -->
+                <li class="nav-item">
+                  <a class="nav-link  ms-4 " href="view_wishlist"><i class="fa fa-heart text-light  "></i>
+                      <span class="badge bg-danger">{{wishlist_count}}</span>
+                  </a>
+                </li>
+           
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle ms-4 text-light " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Pages
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                    <li><a class="dropdown-item category" href="signup">Sign up</a></li>
+                    <li><a class="dropdown-item category" href="login1">Login</a></li>
+
+
+                    
+        
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle ms-4 text-light " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categories
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% for category in categorys %}
+
+                    <li><a class="dropdown-item category" href="{% url 'products_by_category' category.id %}">{{category.name}}</a></li>
+
+                    {% endfor %}
+        
+                  </ul>
+                </li>
+              
+              </ul>
+              <form class="d-flex ">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
+      </nav>
+   {% block carousel %} {% endblock %}
+   {% block discount %} {% endblock %}
+   {% block register %} {% endblock %}
+   {% block categories %} {% endblock %}
+   {% block viewproducts %} {% endblock %}
+   {% block viewcategories %} {% endblock %}
+   {% block detail %} {% endblock %}
+   {% block cart %} {% endblock %}
+   {% block wishlist %} {% endblock %}
+   {% block checkout %} {% endblock %}
+   {% block emptycart %} {% endblock %}
+   {% block orders %} {% endblock %}
+   {% block login %} {% endblock %}
+   {% block emptywishlist %} {% endblock %}
+   {% block account %} {% endblock %}
+
+
+  
+
+
+</body>
+
+</html>
